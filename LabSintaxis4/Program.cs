@@ -188,22 +188,79 @@ namespace LabSintaxis4
                     }
                 case '7':
                     {
-                        int i = 2;
+                        int intNumPrueba=1;
                         Console.WriteLine("Ingresar cantidad de números primos gemelos a mostrar:");
                         bool boolCheck=int.TryParse(Console.ReadLine(), out int intCont);
                         if (boolCheck==false) Console.WriteLine("Entrada de datos incorrecta.");
                         else
                         {
-                            while (intCont>0)
+                            Console.WriteLine("Números primos gemelos en orden creciente:");
+                            for (int i=intCont;i>0;i--)
                             {
-                                if (true)
+                                boolCheck = false;
+                                while (boolCheck==false)
+                                {
+                                    intNumPrueba++;
+                                    if (intNumPrueba%1==0&&intNumPrueba%intNumPrueba==0)
                                     {
-                                        Console.WriteLine(i +" "+ (i + 2));
-                                        intCont--;
-                                    };
-                                i++;
+                                        for (int j = 2; j < intNumPrueba; j++)
+                                        {
+                                            if (intNumPrueba % j == 0)
+                                            { boolCheck = false; break; }
+                                            else boolCheck = true;
+                                        }
+                                        if((intNumPrueba+2)%1==0&&(intNumPrueba+2)%(intNumPrueba+2)==0)
+                                        {
+                                            for (int j = 2; j < (intNumPrueba + 2); j++)
+                                            {
+                                                if ((intNumPrueba + 2) % j == 0)
+                                                { boolCheck = false; break; }
+                                            }
+                                        }
+                                    }
+                                };
+                                Console.WriteLine(intNumPrueba + " " + (intNumPrueba + 2));
                             };
                         };
+                        break;
+                    }
+                case '8':
+                    {
+                        int intTry = 0;
+                        string strClave = "clave01";
+                        while(intTry<4)
+                        {
+                            intTry++;
+                            Console.WriteLine("Introduzca clave (es clave01):");
+                            string strIngClave = Console.ReadLine();
+                            if (string.Compare(strClave, strIngClave) == 0)
+                            {
+                                Console.WriteLine("Clave correcta");
+                                break;
+                            }
+                            else Console.WriteLine("Clave incorrecta");
+                        }
+                        if (intTry==4) Console.WriteLine("Número de intentos excedido.");
+                        break;
+                    }
+                case '9':
+                    {
+                        Console.WriteLine("Ingrese dimensión de lado del tríangulo (número de renglones):");
+                        bool boolCheck = int.TryParse(Console.ReadLine(), out int intLado);
+                        if (boolCheck)
+                        {
+                            string[] strTriangulo= new string[intLado];
+
+                            for (int i = 0; i < intLado; i++)
+                            {
+                                strTriangulo[i] = "*";
+                                for (int j=0;j<i;j++)
+                                   strTriangulo[i] = string.Concat('*', strTriangulo[i], '*');
+                                for (int j = i + 1; j < intLado; j++)
+                                    strTriangulo[i] = string.Concat(' ', strTriangulo[i], ' ');
+                                Console.WriteLine(strTriangulo[i]);
+                            }
+                        }
                         break;
                     }
                 default: Console.WriteLine("\nOpción no disponible."); break;
