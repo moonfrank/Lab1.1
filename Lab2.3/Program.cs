@@ -17,10 +17,10 @@ namespace Lab2._3
         static void Main()
         {
             Console.WriteLine("Ingrese opción:\n"
-                               +"1) Filtrar provincias\n"
-                               +"2) Mayores a 20\n"
-                               +"3) Código Postal\n"
-                               +"4) Lista de empleados\n");
+                               + "1) Filtrar provincias\n"
+                               + "2) Mayores a 20\n"
+                               + "3) Código Postal\n"
+                               + "4) Lista de empleados\n");
             int intChoice;
             while (true)
             {
