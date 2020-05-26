@@ -24,7 +24,7 @@ namespace Negocio
             /* Si realiza esta práctica sobre el MS SQL SERVER 2005 Express Edition entonces debe
              * utilizar el siguiente connection string:
              */
-            this.Conn = new SqlConnection("Data Source=localhost\SqlExpress;Initial Catalog=academia;"+
+            this.Conn = new SqlConnection("Data Source=localhost\\SqlExpress;Initial Catalog=academia;"+
                                           "Integrated Security=true;");
 
             this.DaUsuarios = new SqlDataAdapter("select * from usuarios", this.Conn);
