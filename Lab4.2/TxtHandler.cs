@@ -8,7 +8,7 @@ using System.Data.OleDb;
 
 namespace Lab4._2
 {
-    class TxtHandler:FileHandler
+    public class TxtHandler:FileHandler
     {
         public String connectionString {get {return @"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=F:\Documents\Apuntes UTN\III\NET\2020\TecIDELabs\TecIDELabs\Lab4.2\bin\Debug;
                                                         Extended Properties='text;HDR=Yes;FMT=Delimited'"; } }

@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data;
 using System.Threading.Tasks;
-using System.IO;
+using System.Data;
 
-namespace Lab4._2
+namespace Lab4._4
 {
-    public class FileHandler
+    class Contactos
     {
         protected DataTable misContactos;
 
-        public FileHandler()
+        public Contactos()
         {
             this.misContactos = this.GetTabla();
         }
@@ -31,7 +30,7 @@ namespace Lab4._2
         {
             foreach (DataRow fila in this.misContactos.Rows)
             {
-                if (fila.RowState!=DataRowState.Deleted)
+                if (fila.RowState != DataRowState.Deleted)
                 {
                     foreach (DataColumn col in this.misContactos.Columns)
                         Console.WriteLine("{0}: {1}", col.ColumnName, fila[col]);
@@ -56,7 +55,7 @@ namespace Lab4._2
             Console.WriteLine("Ingrese el numero de fila a editar");
             int nroFila = int.Parse(Console.ReadLine());
             DataRow fila = this.misContactos.Rows[nroFila - 1];
-            for (int nroCol = 1; nroCol<this.misContactos.Columns.Count; nroCol++)
+            for (int nroCol = 1; nroCol < this.misContactos.Columns.Count; nroCol++)
             {
                 DataColumn col = this.misContactos.Columns[nroCol];
                 Console.Write("Ingrese {0}:", col.ColumnName);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab4._2
 {
-    class XmlHandler:FileHandler
+    public class XmlHandler:FileHandler
     {
         protected DataSet ds;
 
