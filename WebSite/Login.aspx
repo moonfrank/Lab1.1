@@ -1,13 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/LabLoginMasterPage.master" AutoEventWireup="true"  CodeFile="Login.aspx.cs" Inherits="Login" %> 
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" Runat="Server">
         <div>
         </div>
         <table style="width:100%;">
@@ -51,6 +44,4 @@
                 <td>&nbsp;</td>
             </tr>
         </table>
-    </form>
-</body>
-</html>
+</asp:Content>
